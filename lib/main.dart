@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mutyne/features/authentication/views/login_screen.dart';
+import 'package:mutyne/constants/colors.dart';
 
 void main() {
   runApp(const App());
@@ -21,9 +22,9 @@ class App extends StatelessWidget {
       //   GlobalMaterialLocalizations.delegate,
       // ],
       theme: ThemeData(
-        textTheme: const TextTheme(
+        textTheme: TextTheme(
           bodyMedium: TextStyle(
-            color: Color(0xff181818),
+            color: BaseColors.black[10],
           ),
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mutyne/constants/gaps.dart';
 import 'package:mutyne/constants/sizes.dart';
+import 'package:mutyne/constants/colors.dart';
 import 'package:mutyne/common/widgets/top_area.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Gaps.v80,
             // 여기 Container안에서 Login ui 작업하신거 연결하면 되요!
             Container(
-              color: Colors.yellow,
+              color: BaseColors.green[1],
               width: double.infinity,
               height: 500,
               child: const Center(child: Text('로그인 UI 작업')),
