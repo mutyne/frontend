@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:mutyne/constants/styles.dart';
 import 'package:mutyne/common/widgets/global_safe_area.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = "login";
   static String routeURL = "/login";
+
   const LoginScreen({super.key});
 
   @override
@@ -12,7 +15,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 void _onNavigateBack(BuildContext context) {
-  debugPrint('arrow back');
+  context.goNamed('signup'); // 수정 필요
 }
 
 class _LoginScreenState extends State<LoginScreen> {

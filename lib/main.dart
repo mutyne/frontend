@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:mutyne/constants/styles.dart';
-import 'package:mutyne/features/authentication/views/login_screen.dart';
+import 'package:mutyne/router.dart';
 
 void main() {
   runApp(const App());
@@ -11,8 +12,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      //  routerConfig: ref.watch(routerProvider),
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       title: 'Mutyne App',
       // localizationsDelegates: const [
@@ -38,7 +39,6 @@ class App extends StatelessWidget {
           ),
         ),
       ),
-      home: const LoginScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:mutyne/constants/styles.dart';
 
 class GlobalSafeArea extends StatelessWidget {
