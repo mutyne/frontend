@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mutyne/constants/styles.dart';
 import 'package:mutyne/features/authentication/views/login_screen.dart';
-import 'package:mutyne/constants/colors.dart';
-import 'package:mutyne/constants/sizes.dart';
 
 void main() {
   runApp(const App());
