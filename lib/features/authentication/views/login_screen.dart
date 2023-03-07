@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mutyne/constants/gaps.dart';
 import 'package:mutyne/constants/sizes.dart';
 import 'package:mutyne/constants/colors.dart';
-import 'package:mutyne/common/widgets/top_area.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = "login";
@@ -13,18 +12,27 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
+void _onNavigateBack(BuildContext context) {
+  debugPrint('arrow back');
+}
+
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () => _onNavigateBack(context),
+          child: Image.asset('assets/arrow_back.png'),
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: Sizes.size20,
           ),
           child: Column(children: [
-            const TopArea(),
-            Gaps.v80,
+            Gaps.v40,
             // 여기 Container안에서 Login ui 작업하신거 연결하면 되요!
             Container(
               color: BaseColors.green[1],
