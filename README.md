@@ -1,23 +1,23 @@
-## mutyne
+# mutyne
 
-A new Flutter project.
+```
+A new Flutter project. Routine apps for the environment.
+```
 
----
-
-### 지원 Device
+## Supported Devices
 
 <a href="https://github.com/mutyne/frontend">
-  <img src="https://img.shields.io/badge/IOS-000000?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/IOS-181818?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Android-181818?style=for-the-badge" />
 </a>
 
-### 폴더 구조와 설명(2023.03.07 기준)
+## Folder structure and description
 
 ```
 📦assets
 📦lib
  ┣ 📂common
- ┃ ┣ 📂widgets
+ ┃ ┗ 📂widgets
  ┣ 📂constants
  ┣ 📂features
  ┃ ┣ 📂authentication
