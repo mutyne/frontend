@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:mutyne/features/authentication/views/login_screen.dart';
 import 'package:mutyne/features/authentication/views/signup_screen.dart';
+import 'package:mutyne/features/authentication/views/password_screen.dart';
 
 class AppRouter {
   static final router = GoRouter(
@@ -15,6 +16,11 @@ class AppRouter {
           path: LoginScreen.routeURL,
           name: LoginScreen.routeName,
           builder: (context, state) => const LoginScreen(),
+        ),
+        GoRoute(
+          path: PasswordScreen.routeURL,
+          name: PasswordScreen.routeName,
+          builder: (context, state) => const PasswordScreen(),
         ),
         GoRoute(
           path: SignupScreen.routeURL,
