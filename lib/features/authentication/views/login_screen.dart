@@ -40,96 +40,91 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     SizedBox(
-                      width: MediaQuery.of(context).size.width,
+                      width: double.infinity,
                       child: Column(
                         children: <Widget>[
                           const Text(
                             '로그인',
                             style: TextStyle(
-                              fontSize: 26.0,
+                              fontSize: Sizes.size24 + Sizes.size2,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          const SizedBox(
-                            height: 30.0,
-                          ),
+                          Gaps.v32,
                           TextFormField(
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               hintText: '이메일',
-                              hintStyle: TextStyle(
-                                fontSize: 13.0,
+                              hintStyle: const TextStyle(
+                                fontSize: Sizes.size14 - 1,
                                 fontWeight: FontWeight.w400,
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFFD4D4D4),
+                                  color: BaseColors.black[3]!,
                                 ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12.0),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(Sizes.size12),
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFFD4D4D4),
+                                  color: BaseColors.black[3]!,
                                 ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12.0),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(Sizes.size12),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 8.0,
-                          ),
+                          Gaps.v8,
                           TextFormField(
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               hintText: '비밀번호',
-                              hintStyle: TextStyle(
-                                fontSize: 13.0,
+                              hintStyle: const TextStyle(
+                                fontSize: Sizes.size12 + Sizes.size1,
                                 fontWeight: FontWeight.w400,
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFFD4D4D4),
+                                  color: BaseColors.black[3]!,
                                 ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12.0),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(Sizes.size12),
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0xFFD4D4D4),
+                                  color: BaseColors.black[3]!,
                                 ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12.0),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(Sizes.size12),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 24.0,
-                          ),
+                          Gaps.v24,
                           TextButton(
                             onPressed: () {
                               print('button login is clicked');
                             },
                             style: TextButton.styleFrom(
-                              backgroundColor: const Color(0xFFE5E5E5),
+                              backgroundColor: BaseColors.black[10],
                               fixedSize: const Size(370, 54),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0),
+                                borderRadius:
+                                    BorderRadius.circular(Sizes.size5),
                               ),
                             ),
                             child: const Text(
                               '로그인',
                               style: TextStyle(
-                                fontSize: 16.0,
+                                fontSize: Sizes.size16,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white,
                               ),
                             ),
                           ),
-                          const SizedBox(height: 24.0),
+                          Gaps.v24,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
@@ -140,14 +135,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                   //     builder: (BuildContext context) {
                                   //   return const PasswordScreen();
                                   // }));
-                                  context.push('/password');
+                                  context.pushNamed('password');
+                                  // context.goNamed('password');
+                                  // TODO: subroutes 는 context.push('password'); 하면 url 을 못 찾는데 혹시 이유 아시나요
                                 },
-                                child: const Text(
+                                child: Text(
                                   '비밀번호 찾기',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: Sizes.size14,
                                     fontWeight: FontWeight.w400,
-                                    color: Color(0xFF616161),
+                                    color: BaseColors.black[8],
                                   ),
                                 ),
                               ),
@@ -155,12 +152,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 onTap: () {
                                   print('button join is clicked');
                                 },
-                                child: const Text(
+                                child: Text(
                                   '가입하기',
                                   style: TextStyle(
-                                    fontSize: 14.0,
+                                    fontSize: Sizes.size14,
                                     fontWeight: FontWeight.w400,
-                                    color: Color(0xFF616161),
+                                    color: BaseColors.black[8],
                                   ),
                                 ),
                               ),
@@ -176,18 +173,16 @@ class _LoginScreenState extends State<LoginScreen> {
                             onTap: () {
                               print('button join is clicked');
                             },
-                            child: const Text(
+                            child: Text(
                               '간편 로그인',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: Sizes.size14,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0xFF616161),
+                                color: BaseColors.black[8],
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 16.0,
-                          ),
+                          Gaps.v16,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -206,15 +201,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: const Text(
                                   'K',
                                   style: TextStyle(
-                                    fontSize: 24.0,
+                                    fontSize: Sizes.size24,
                                     fontWeight: FontWeight.w700,
                                     color: Colors.black87,
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 25.0,
-                              ),
+                              Gaps.h24,
                               TextButton(
                                 onPressed: () {
                                   print('button A is clicked');
@@ -230,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: const Text(
                                   'A',
                                   style: TextStyle(
-                                    fontSize: 24.0,
+                                    fontSize: Sizes.size24,
                                     fontWeight: FontWeight.w700,
                                     color: Colors.black87,
                                   ),

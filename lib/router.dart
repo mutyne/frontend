@@ -13,15 +13,16 @@ class AppRouter {
       },
       routes: [
         GoRoute(
-          path: LoginScreen.routeURL,
-          name: LoginScreen.routeName,
-          builder: (context, state) => const LoginScreen(),
-        ),
-        GoRoute(
-          path: PasswordScreen.routeURL,
-          name: PasswordScreen.routeName,
-          builder: (context, state) => const PasswordScreen(),
-        ),
+            path: LoginScreen.routeURL,
+            name: LoginScreen.routeName,
+            builder: (context, state) => const LoginScreen(),
+            routes: [
+              GoRoute(
+                path: PasswordScreen.routeURL,
+                name: PasswordScreen.routeName,
+                builder: (context, state) => const PasswordScreen(),
+              ),
+            ]),
         GoRoute(
           path: SignupScreen.routeURL,
           name: SignupScreen.routeName,
