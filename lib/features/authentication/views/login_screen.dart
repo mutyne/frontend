@@ -14,24 +14,25 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-void _onNavigateBack(BuildContext context) {
-  context.goNamed('signup'); // 수정 필요
+void _onSignupRoute(BuildContext context) {
+  context.pushNamed('signup');
 }
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () => _onNavigateBack(context),
-          child: Image.asset('assets/arrow_back.png'),
-        ),
-      ),
       body: GlobalSafeArea(
         child: Column(
           children: [
-            Gaps.v40,
+            Column(
+              children: [
+                Row(
+                  children: const [Gaps.v56, Gaps.v2],
+                ),
+                Gaps.v40,
+              ],
+            ),
             Center(
               child: Container(
                 padding: const EdgeInsets.only(
@@ -152,9 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
                               GestureDetector(
-                                onTap: () {
-                                  print('button join is clicked');
-                                },
+                                onTap: () => _onSignupRoute(context),
                                 child: const Text(
                                   '가입하기',
                                   style: TextStyle(

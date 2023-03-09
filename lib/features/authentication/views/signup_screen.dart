@@ -15,7 +15,7 @@ class SignupScreen extends StatefulWidget {
 }
 
 void _onNavigateBack(BuildContext context) {
-  context.goNamed('login'); // 수정 필요
+  context.pop();
 }
 
 class _SignupScreenState extends State<SignupScreen> {
@@ -25,7 +25,7 @@ class _SignupScreenState extends State<SignupScreen> {
         appBar: AppBar(
           leading: GestureDetector(
             onTap: () => _onNavigateBack(context),
-            child: Image.asset('assets/arrow_back.png'),
+            child: Image.asset('assets/images/arrow_back.png'),
           ),
         ),
         body: GlobalSafeArea(

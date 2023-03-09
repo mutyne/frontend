@@ -25,7 +25,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () => _onNavigateBack(context),
-          child: Image.asset('assets/arrow_back.png'),
+          child: Image.asset('assets/images/arrow_back.png'),
         ),
       ),
       body: GlobalSafeArea(

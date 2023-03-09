@@ -23,6 +23,7 @@ class App extends StatelessWidget {
       //   GlobalMaterialLocalizations.delegate,
       // ],
       theme: ThemeData(
+        fontFamily: 'Pretendard',
         appBarTheme: AppBarTheme(
           toolbarHeight: Sizes.size56 + Sizes.size2,
           backgroundColor: BaseColors.black[0],
