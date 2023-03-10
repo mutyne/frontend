@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:mutyne/constants/styles.dart';
 import 'package:mutyne/common/widgets/global_safe_area.dart';
+import 'package:mutyne/features/authentication/views/password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routeName = "login";
@@ -50,12 +51,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          Gaps.v32,
+                          Gaps.v28,
+                          Gaps.v2,
                           TextFormField(
                             decoration: InputDecoration(
                               hintText: '이메일',
                               hintStyle: const TextStyle(
-                                fontSize: Sizes.size14 - 1,
+                                fontSize: Sizes.size14 - Sizes.size1,
                                 fontWeight: FontWeight.w400,
                               ),
                               enabledBorder: OutlineInputBorder(
@@ -135,9 +137,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   //     builder: (BuildContext context) {
                                   //   return const PasswordScreen();
                                   // }));
-                                  context.pushNamed('password');
+                                  context.pushNamed(PasswordScreen.routeName);
                                   // context.goNamed('password');
-                                  // TODO: subroutes 는 context.push('password'); 하면 url 을 못 찾는데 혹시 이유 아시나요
                                 },
                                 child: Text(
                                   '비밀번호 찾기',

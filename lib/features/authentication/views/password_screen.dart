@@ -6,7 +6,7 @@ import 'package:mutyne/common/widgets/global_safe_area.dart';
 
 class PasswordScreen extends StatefulWidget {
   static String routeName = "password";
-  static String routeURL = "password";
+  static String routeURL = ":password";
 
   const PasswordScreen({super.key});
 
@@ -61,7 +61,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       ],
                     ),
                   ),
-                  Gaps.v36,
+                  Row(children: const [Gaps.v32, Gaps.v2]),
                   Column(
                     children: [
                       TextFormField(
