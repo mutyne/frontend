@@ -6,7 +6,7 @@ import 'package:mutyne/common/widgets/global_safe_area.dart';
 
 class PasswordScreen extends StatefulWidget {
   static String routeName = "password";
-  static String routeURL = "/password";
+  static String routeURL = ":password";
 
   const PasswordScreen({super.key});
 
@@ -15,7 +15,7 @@ class PasswordScreen extends StatefulWidget {
 }
 
 void _onNavigateBack(BuildContext context) {
-  context.goNamed('login'); // 수정 필요
+  context.pop();
 }
 
 class _PasswordScreenState extends State<PasswordScreen> {
@@ -41,69 +41,62 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: [
                         Text(
                           '비밀번호 재설정 안내\n메일을 보내드립니다.',
                           style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: Sizes.size20 + Sizes.size2,
                             fontWeight: FontWeight.w700,
-                            color: Color.fromRGBO(24, 24, 24, 1),
+                            color: BaseColors.black[10],
                           ),
                         ),
                         Text(
                           '가입하신 정확한 이메일 주소를 입력해 주세요.',
                           style: TextStyle(
-                            fontSize: 14.0,
+                            fontSize: Sizes.size14,
                             fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(24, 24, 24, 1),
+                            color: BaseColors.black[10],
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 34,
-                  ),
+                  Row(children: const [Gaps.v32, Gaps.v2]),
                   Column(
-                    children: <Widget>[
+                    children: [
                       TextFormField(
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           hintText: '이메일',
-                          hintStyle: TextStyle(
-                            fontSize: 14.0,
+                          hintStyle: const TextStyle(
+                            fontSize: Sizes.size14,
                             fontWeight: FontWeight.w400,
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color.fromRGBO(212, 212, 212,
-                                  1), // TODO: 이거 color code 로 바로 넣는 법 없음? #D4D4D4 이런 거
+                              color: BaseColors.black[3]!, // 못찾네...
                             ),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12.0),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(Sizes.size12),
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color.fromRGBO(212, 212, 212, 1),
+                              color: BaseColors.black[3]!,
                             ),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12.0),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(Sizes.size12),
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 16,
-                      ),
+                      Gaps.v16,
                       TextButton(
                         onPressed: () {
-                          print('button login is clicked');
+                          print('button email is clicked');
                         },
                         style: TextButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromRGBO(229, 229, 229, 1),
-                          fixedSize:
-                              Size(MediaQuery.of(context).size.width, 55),
+                          backgroundColor: BaseColors.black[10],
+                          fixedSize: const Size(double.infinity, Sizes.size52),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
@@ -111,7 +104,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                         child: const Text(
                           '이메일 발송',
                           style: TextStyle(
-                            fontSize: 16.0,
+                            fontSize: Sizes.size16,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
                           ),
