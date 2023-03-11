@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:mutyne/constants/styles.dart';
 import 'package:mutyne/common/widgets/global_safe_area.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerWidget {
   static String routeName = "login";
   static String routeURL = "/login";
 
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-void _onSignupRoute(BuildContext context) {
-  context.pushNamed('signup');
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: GlobalSafeArea(
         child: Column(
@@ -249,4 +241,8 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+}
+
+void _onSignupRoute(BuildContext context) {
+  context.pushNamed('signup');
 }

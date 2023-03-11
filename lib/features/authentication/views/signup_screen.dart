@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:mutyne/constants/styles.dart';
 import 'package:mutyne/common/widgets/global_safe_area.dart';
 
-class SignupScreen extends StatefulWidget {
+class SignupScreen extends ConsumerWidget {
   static String routeName = "signup";
   static String routeURL = "/signup";
 
   const SignupScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
-}
-
-void _onNavigateBack(BuildContext context) {
-  context.pop();
-}
-
-class _SignupScreenState extends State<SignupScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         appBar: AppBar(
           leading: GestureDetector(
@@ -40,4 +32,8 @@ class _SignupScreenState extends State<SignupScreen> {
           ]),
         ));
   }
+}
+
+void _onNavigateBack(BuildContext context) {
+  context.pop();
 }
