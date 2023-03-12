@@ -1,31 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:mutyne/constants/styles.dart';
 import 'package:mutyne/common/widgets/global_safe_area.dart';
 
-class PasswordScreen extends StatefulWidget {
+class PasswordScreen extends ConsumerWidget {
   static String routeName = "password";
   static String routeURL = "/password";
 
   const PasswordScreen({super.key});
 
   @override
-  State<PasswordScreen> createState() => _PasswordScreenState();
-}
-
-void _onNavigateBack(BuildContext context) {
-  context.goNamed('login'); // 수정 필요
-}
-
-class _PasswordScreenState extends State<PasswordScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () => _onNavigateBack(context),
-          child: Image.asset('assets/arrow_back.png'),
+          child: Image.asset('assets/images/arrow_back.png'),
         ),
       ),
       body: GlobalSafeArea(
@@ -127,4 +119,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
       ),
     );
   }
+}
+
+void _onNavigateBack(BuildContext context) {
+  context.goNamed('login'); // 수정 필요
 }
